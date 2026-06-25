@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Navigation from './components/Navigation'
 import HeroSection from './sections/HeroSection'
 import ProgramsSection from './sections/ProgramsSection'
@@ -9,30 +9,9 @@ import NewsSection from './sections/NewsSection'
 import FAQSection from './sections/FAQSection'
 import InstructorSection from './sections/InstructorSection'
 import Footer from './sections/Footer'
-import Lenis from 'lenis'
 
 export default function App() {
   const [lang, setLang] = useState<'en' | 'rw'>('en')
-
-  useEffect(() => {
-    // Initialize Lenis smooth scroll
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-    })
-
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-
-    return () => {
-      lenis.destroy()
-    }
-  }, [])
 
   return (
     <div className="relative w-full min-h-screen bg-raita-light">
