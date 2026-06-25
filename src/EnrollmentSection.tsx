@@ -138,10 +138,8 @@ export default function EnrollmentSection({ lang }: EnrollmentSectionProps) {
       ref={sectionRef}
       className="relative w-full py-24 lg:py-32 bg-white"
     >
-      {/* Content wrapper */}
-      <div className="relative z-10">
-        <div className="w-full px-6 lg:px-12 xl:px-20">
-          <div className="max-w-4xl mx-auto">
+      <div className="w-full px-6 lg:px-12 xl:px-20">
+        <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div
             className={`text-center mb-12 transition-all duration-700 ${
@@ -318,7 +316,6 @@ export default function EnrollmentSection({ lang }: EnrollmentSectionProps) {
                 </button>
               </form>
             )}
-          </div>
           </div>
         </div>
       </div>

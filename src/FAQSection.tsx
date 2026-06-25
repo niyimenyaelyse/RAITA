@@ -106,10 +106,8 @@ export default function FAQSection({ lang }: FAQSectionProps) {
       ref={sectionRef}
       className="relative w-full py-24 lg:py-32 bg-white"
     >
-      {/* Content wrapper */}
-      <div className="relative z-10">
-        <div className="w-full px-6 lg:px-12 xl:px-20">
-          <div className="max-w-4xl mx-auto">
+      <div className="w-full px-6 lg:px-12 xl:px-20">
+        <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div
             className={`text-center mb-16 transition-all duration-700 ${
@@ -183,7 +181,6 @@ export default function FAQSection({ lang }: FAQSectionProps) {
                 </div>
               </div>
             ))}
-          </div>
           </div>
         </div>
       </div>

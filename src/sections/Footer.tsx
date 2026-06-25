@@ -64,7 +64,13 @@ export default function Footer({ lang }: FooterProps) {
   }
 
   return (
-    <footer id="contact" className="relative w-full bg-raita-dark">
+    <footer id="contact" className="relative w-full bg-raita-dark bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: 'url(/images/footerbg.png)',
+    }}>
+      {/* Overlay for 40% opacity */}
+      <div className="absolute inset-0 bg-raita-dark/60"></div>
+      {/* Content wrapper */}
+      <div className="relative z-10">
       {/* CTA Banner */}
       <div className="w-full px-6 lg:px-12 xl:px-20 py-20 lg:py-28 border-b border-white/5">
         <div className="max-w-4xl mx-auto text-center">
@@ -99,7 +105,7 @@ export default function Footer({ lang }: FooterProps) {
                 </span>
               </div>
             </div>
-            <p className="text-white/40 text-sm leading-relaxed">
+            <p className="text-white/80 text-sm leading-relaxed">
               {lang === 'en'
                 ? 'Building Rwanda\'s AI workforce through accessible, world-class education for all.'
                 : 'Kubaka abakozi ba AI b\'u Rwanda binyuze mu myigishirize y\'isi yose.'}
@@ -116,7 +122,7 @@ export default function Footer({ lang }: FooterProps) {
                 <li key={link.label}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-white/40 hover:text-raita-yellow text-sm transition-colors flex items-center gap-2 group"
+                    className="text-white/80 hover:text-raita-yellow text-sm transition-colors flex items-center gap-2 group"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -136,7 +142,7 @@ export default function Footer({ lang }: FooterProps) {
                 <li key={link.label}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-white/40 hover:text-raita-yellow text-sm transition-colors flex items-center gap-2 group"
+                    className="text-white/80 hover:text-raita-yellow text-sm transition-colors flex items-center gap-2 group"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -154,21 +160,21 @@ export default function Footer({ lang }: FooterProps) {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-raita-green flex-shrink-0 mt-0.5" />
-                <span className="text-white/40 text-sm">{c.address}</span>
+                <span className="text-white/80 text-sm">{c.address}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-raita-green flex-shrink-0" />
-                <span className="text-white/40 text-sm">{c.phone}</span>
+                <span className="text-white/80 text-sm">{c.phone}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-raita-green flex-shrink-0" />
-                <span className="text-white/40 text-sm">{c.email}</span>
+                <span className="text-white/80 text-sm">{c.email}</span>
               </li>
             </ul>
 
             {/* Social */}
             <div className="mt-8">
-              <h5 className="font-mono text-[10px] text-white/30 uppercase tracking-widest mb-4">
+              <h5 className="font-mono text-[10px] text-white/70 uppercase tracking-widest mb-4">
                 {c.socialTitle}
               </h5>
               <div className="flex items-center gap-3">
@@ -176,7 +182,7 @@ export default function Footer({ lang }: FooterProps) {
                   href="https://instagram.com/Rwanda AI training academy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 border border-white/10 flex items-center justify-center text-white/40 hover:text-raita-yellow hover:border-raita-yellow transition-all"
+                  className="w-10 h-10 border border-white/30 flex items-center justify-center text-white/80 hover:text-raita-yellow hover:border-raita-yellow transition-all"
                 >
                   <Instagram className="w-4 h-4" />
                 </a>
@@ -184,7 +190,7 @@ export default function Footer({ lang }: FooterProps) {
                   href="https://linkedin.com/company/Rwanda AI training academy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 border border-white/10 flex items-center justify-center text-white/40 hover:text-raita-yellow hover:border-raita-yellow transition-all"
+                  className="w-10 h-10 border border-white/30 flex items-center justify-center text-white/80 hover:text-raita-yellow hover:border-raita-yellow transition-all"
                 >
                   <Linkedin className="w-4 h-4" />
                 </a>
@@ -192,7 +198,7 @@ export default function Footer({ lang }: FooterProps) {
                   href="https://x.com/Rwanda AI training academy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 border border-white/10 flex items-center justify-center text-white/40 hover:text-raita-yellow hover:border-raita-yellow transition-all"
+                  className="w-10 h-10 border border-white/30 flex items-center justify-center text-white/80 hover:text-raita-yellow hover:border-raita-yellow transition-all"
                 >
                   <Twitter className="w-4 h-4" />
                 </a>
@@ -205,18 +211,26 @@ export default function Footer({ lang }: FooterProps) {
       {/* Bottom Bar */}
       <div className="w-full px-6 lg:px-12 xl:px-20 py-6 border-t border-white/5">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/20 text-xs font-mono">
+          <p className="text-white/60 text-xs font-mono">
             &copy; {new Date().getFullYear()}{c.copyright}
           </p>
           <div className="flex items-center gap-6">
-            <span className="text-white/20 text-xs font-mono hover:text-white/40 cursor-pointer transition-colors">
+            <span className="text-white/60 text-xs font-mono hover:text-white/80 cursor-pointer transition-colors">
               {lang === 'en' ? 'Privacy Policy' : 'Politiki y\'Ibanga'}
             </span>
-            <span className="text-white/20 text-xs font-mono hover:text-white/40 cursor-pointer transition-colors">
+            <span className="text-white/60 text-xs font-mono hover:text-white/80 cursor-pointer transition-colors">
               {lang === 'en' ? 'Terms of Service' : 'Amategeko yo gukoresha'}
             </span>
           </div>
         </div>
+
+        {/* Developer Credit */}
+        <div className="w-full text-center mt-8 pt-8 border-t border-white/10">
+          <p className="text-white/70 text-xs font-mono">
+            Developed by Elyse NIYIMENYA
+          </p>
+        </div>
+      </div>
       </div>
     </footer>
   )
