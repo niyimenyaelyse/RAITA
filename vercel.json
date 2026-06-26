@@ -1,4 +1,4 @@
 {
-  "installCommand": "echo 'Skipping install step'",
+  "installCommand": "npm install --no-package-lock",
   "buildCommand": "npm run build"
 }
